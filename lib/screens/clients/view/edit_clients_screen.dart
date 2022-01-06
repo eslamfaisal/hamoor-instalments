@@ -2,18 +2,19 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:instalment/screens/base_view.dart';
 import 'package:instalment/screens/clients/model/clients_model.dart';
-import 'package:instalment/screens/clients/viewmodel/clients_view_model.dart';
+import 'package:instalment/screens/clients/viewmodel/edit_clients_view_model.dart';
 
 class EditClientsScreen extends StatelessWidget {
-  final GlobalKey<ScaffoldState> _key = GlobalKey(); // Create a key
 
   bool isNewClient;
   ClientModel? clientModel;
+
   EditClientsScreen(this.isNewClient, this.clientModel, {Key? key})
       : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return BaseView<ClientsViewModel>(
+    return BaseView<EditClientsViewModel>(
       onModelReady: (viewModel) {
         print('isNewClient ${isNewClient}');
       },
@@ -21,7 +22,6 @@ class EditClientsScreen extends StatelessWidget {
         return SafeArea(
           child: Scaffold(
             backgroundColor: Colors.white,
-            key: _key,
             appBar: AppBar(
               title: Text(
                 isNewClient

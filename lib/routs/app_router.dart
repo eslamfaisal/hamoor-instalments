@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:instalment/routs/routing_data.dart';
 import 'package:instalment/routs/routs_names.dart';
 import 'package:instalment/screens/clients/model/clients_model.dart';
+import 'package:instalment/screens/clients/view/clients_details_screen.dart';
 import 'package:instalment/screens/clients/view/edit_clients_screen.dart';
 import 'package:instalment/screens/home/view/home_screen.dart';
 import 'package:instalment/screens/not_found_screen/not_found_screen.dart';
@@ -29,6 +30,10 @@ class AppRouter {
         return _getPageRoute(
             EditClientsScreen(clientArgument == null, clientArgument),
             settings);
+
+      case RouteName.CLIENTS_DETAILS:
+        var clientArgument = settings.arguments as ClientModel;
+        return _getPageRoute(ClientsDetailsScreen(clientArgument), settings);
 
       default:
         return _getPageRoute(const NotFoundScreen(), settings);

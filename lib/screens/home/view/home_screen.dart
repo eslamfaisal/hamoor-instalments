@@ -9,7 +9,6 @@ import 'package:instalment/screens/home/viewmodel/home_view_model.dart';
 import 'package:instalment/services/navigation_service.dart';
 
 class HomeScreen extends StatelessWidget {
-  final GlobalKey<ScaffoldState> _key = GlobalKey(); // Create a key
 
   HomeScreen({Key? key}) : super(key: key);
 
@@ -21,7 +20,6 @@ class HomeScreen extends StatelessWidget {
         return SafeArea(
           child: Scaffold(
             backgroundColor: Colors.white,
-            key: _key,
             appBar: AppBar(
               title: Text(
                 tr('clients'),

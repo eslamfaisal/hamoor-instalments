@@ -5,26 +5,36 @@ import 'package:instalment/screens/clients/viewmodel/clients_view_model.dart';
 
 class ClientsScreen extends StatelessWidget {
 
-  final GlobalKey<ScaffoldState> _key = GlobalKey(); // Create a key
-
   ClientsScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return BaseView<ClientsViewModel>(
-      onModelReady: (viewModel) {},
+      onModelReady: (viewModel) {
+        viewModel.getClients();
+      },
       builder: (context, viewModel, child) {
         return SafeArea(
           child: Scaffold(
             backgroundColor: Colors.white,
-            key: _key,
-
-            body: Center(
-              child: Text(
-                tr('app_name'),
-                style: Theme.of(context).textTheme.headline4,
-              ),
-            ),
+            body: ListView.builder(
+                itemBuilder: (context, index) {
+                  return ListTile(
+                    title: Text(
+                      viewModel.clients[index].name,
+                      style: const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    subtitle: Text(viewModel.clients[index].phone, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+                    onTap: () {
+                      viewModel.navigateToClientDetails(
+                          context, viewModel.clients[index]);
+                    },
+                  );
+                },
+                itemCount: viewModel.clients.length),
             floatingActionButton: FloatingActionButton(
               onPressed: () {},
               child: const Icon(Icons.add),

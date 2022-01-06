@@ -8,7 +8,7 @@ import 'package:instalment/screens/clients/model/clients_model.dart';
 import 'package:instalment/services/firebase_services.dart';
 import 'package:instalment/services/navigation_service.dart';
 
-class ClientsViewModel extends BaseViewModel {
+class EditClientsViewModel extends BaseViewModel {
   TextEditingController nameController = TextEditingController();
   TextEditingController percentageController = TextEditingController();
 
@@ -26,8 +26,4 @@ class ClientsViewModel extends BaseViewModel {
     }
   }
 
-  void navigateToClientDetails(BuildContext context, ClientModel client) {
-    locator<NavigationService>()
-        .navigateTo(RouteName.CLIENTS_DETAILS, arguments: client);
-  }
 }

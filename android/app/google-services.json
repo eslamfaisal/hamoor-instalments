@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "486682848972",
+    "project_id": "instalment-app",
+    "storage_bucket": "instalment-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:486682848972:android:cdb065de700b2ce54d9c69",
+        "android_client_info": {
+          "package_name": "com.eslam.instalment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "486682848972-5hnolmodbkgugbg11tkn08dknb2pbdvb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtzcPZ5d7IPRuwmoWEsreF0mXs8l-wcNw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "486682848972-5hnolmodbkgugbg11tkn08dknb2pbdvb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
