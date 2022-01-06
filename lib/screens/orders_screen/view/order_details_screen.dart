@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:instalment/screens/instalments/view/instalments_screen.dart';
 import 'package:instalment/screens/orders_screen/model/order_model.dart';
 
 class OrderDetailsScreen extends StatelessWidget {
@@ -32,7 +33,7 @@ class OrderDetailsScreen extends StatelessWidget {
           body: TabBarView(
             children: [
               userDetailsWidget(),
-              userDetailsWidget(),
+              InstalmentsScreen(orderModel),
               // OrdersScreen(orderModel),
             ],
           ),

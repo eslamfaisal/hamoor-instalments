@@ -5,4 +5,5 @@ class RouteName {
   static const String CLIENTS_DETAILS = '/clients_details';
   static const String ORDERS_DETAILS = '/order_details';
   static const String ORDERS = '/orders';
+  static const String INSTALMENT_DETAILS = '/instalment_details';
 }

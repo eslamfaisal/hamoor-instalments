@@ -2,6 +2,7 @@ import 'package:get_it/get_it.dart';
 import 'package:instalment/screens/clients/viewmodel/clients_view_model.dart';
 import 'package:instalment/screens/clients/viewmodel/edit_clients_view_model.dart';
 import 'package:instalment/screens/home/viewmodel/home_view_model.dart';
+import 'package:instalment/screens/instalments/viewmodel/instalments_view_model.dart';
 import 'package:instalment/screens/orders_screen/viewmodel/orders_view_model.dart';
 import 'package:instalment/services/firebase_services.dart';
 
@@ -18,6 +19,7 @@ void setupLocator() {
   locator.registerFactory(() => ClientsViewModel());
   locator.registerFactory(() => OrdersViewModel());
   locator.registerFactory(() => EditClientsViewModel());
+  locator.registerFactory(() => InstalmentsViewModel());
 
   initSingleton();
 }
