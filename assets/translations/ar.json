@@ -17,5 +17,7 @@
   "is_installment": "شراء بالاقساط",
   "instalment_total_price": "السعر الاجمالي",
   "details": "التفاصيل",
-  "orders": "الطلبات"
+  "orders": "الطلبات",
+  "yes": "نعم",
+  "no": "لا"
 }
