@@ -1,4 +1,5 @@
 import 'package:get_it/get_it.dart';
+import 'package:instalment/screens/clients/viewmodel/clients_view_model.dart';
 import 'package:instalment/screens/home/viewmodel/home_view_model.dart';
 
 import 'services/navigation_service.dart';
@@ -10,6 +11,7 @@ void setupLocator() {
   locator.registerLazySingleton(() => NavigationService());
   locator.registerLazySingleton(() => SharedPrefServices());
   locator.registerFactory(() => HomeViewModel());
+  locator.registerFactory(() => ClientsViewModel());
 
   initSingleton();
 }

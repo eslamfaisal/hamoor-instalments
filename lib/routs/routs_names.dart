@@ -1,4 +1,5 @@
 class RouteName {
   static const String HOME = '/';
   static const String NOT_FOUND = '/not_found';
+  static const String EDIT_CLIENTS = '/edit_clients';
 }

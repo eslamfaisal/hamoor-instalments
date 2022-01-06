@@ -1,7 +1,12 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:instalment/locator.dart';
+import 'package:instalment/routs/routs_names.dart';
 import 'package:instalment/screens/base_view.dart';
+import 'package:instalment/screens/clients/model/clients_model.dart';
+import 'package:instalment/screens/clients/view/clients_screen.dart';
 import 'package:instalment/screens/home/viewmodel/home_view_model.dart';
+import 'package:instalment/services/navigation_service.dart';
 
 class HomeScreen extends StatelessWidget {
   final GlobalKey<ScaffoldState> _key = GlobalKey(); // Create a key
@@ -17,14 +22,21 @@ class HomeScreen extends StatelessWidget {
           child: Scaffold(
             backgroundColor: Colors.white,
             key: _key,
-            body: Center(
-              child: Text(
-                tr('app_name'),
-                style: Theme.of(context).textTheme.headline4,
+            appBar: AppBar(
+              title: Text(
+                tr('clients'),
+                style: const TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
+              centerTitle: true,
             ),
+            body: ClientsScreen(),
             floatingActionButton: FloatingActionButton(
-              onPressed: () {},
+              onPressed: () {
+                locator<NavigationService>().navigateTo(RouteName.EDIT_CLIENTS);
+              },
               child: const Icon(Icons.add),
             ),
           ),

@@ -9,8 +9,12 @@ class NavigationService {
       routeName = Uri(path: routeName).toString();
     }
 
-    return navigatorKey.currentState!
-        .pushNamed(routeName, arguments: arguments);
+    if (arguments != null) {
+      return navigatorKey.currentState!
+          .pushNamed(routeName, arguments: arguments);
+    } else {
+      return navigatorKey.currentState!.pushNamed(routeName);
+    }
   }
 
   Future<dynamic> navigateToAndClearStack(String routeName,
@@ -19,8 +23,14 @@ class NavigationService {
       routeName = Uri(path: routeName, queryParameters: queryParams).toString();
     }
 
-    return navigatorKey.currentState!
-        .pushNamedAndRemoveUntil(routeName, (r) => false, arguments: arguments);
+    if(arguments != null) {
+      return navigatorKey.currentState!.pushNamedAndRemoveUntil(
+          routeName, (Route<dynamic> route) => false,
+          arguments: arguments);
+    } else {
+      return navigatorKey.currentState!.pushNamedAndRemoveUntil(
+          routeName, (Route<dynamic> route) => false);
+    }
   }
 
   void goBack() {

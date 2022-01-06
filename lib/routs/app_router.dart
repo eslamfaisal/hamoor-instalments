@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:instalment/routs/routing_data.dart';
 import 'package:instalment/routs/routs_names.dart';
+import 'package:instalment/screens/clients/model/clients_model.dart';
+import 'package:instalment/screens/clients/view/edit_clients_screen.dart';
 import 'package:instalment/screens/home/view/home_screen.dart';
 import 'package:instalment/screens/not_found_screen/not_found_screen.dart';
 
@@ -17,9 +19,16 @@ class AppRouter {
     );
 
     switch (routingData.route) {
-
       case RouteName.HOME:
         return _getPageRoute(HomeScreen(), settings);
+
+      case RouteName.EDIT_CLIENTS:
+        var clientArgument = settings.arguments != null
+            ? settings.arguments as ClientModel
+            : null;
+        return _getPageRoute(
+            EditClientsScreen(clientArgument == null, clientArgument),
+            settings);
 
       default:
         return _getPageRoute(const NotFoundScreen(), settings);
