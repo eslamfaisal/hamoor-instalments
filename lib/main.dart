@@ -46,7 +46,7 @@ class MainPage extends StatelessWidget {
       title: tr('app_name'),
       theme: ThemeData(
         primaryColor: primaryColor,
-        primarySwatch: deepGreen,
+        primarySwatch: Colors.blue,
         fontFamily: 'uighur',
       ),
       initialRoute: RouteName.HOME,
