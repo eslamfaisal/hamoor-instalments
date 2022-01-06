@@ -1,11 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:instalment/screens/clients/model/clients_model.dart';
-import 'package:instalment/screens/orders_screen/view/orders_screen.dart';
+import 'package:instalment/screens/orders_screen/model/order_model.dart';
 
-class ClientsDetailsScreen extends StatelessWidget {
-  ClientModel clientModel;
-  ClientsDetailsScreen(this.clientModel, {Key? key}) : super(key: key);
+class OrderDetailsScreen extends StatelessWidget {
+  OrderModel orderModel;
+
+  OrderDetailsScreen(this.orderModel, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,24 +16,24 @@ class ClientsDetailsScreen extends StatelessWidget {
           backgroundColor: Colors.white,
           appBar: AppBar(
             title: Text(
-              tr('clients_details'),
+              tr('order_details'),
               style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            centerTitle: true,
             bottom: TabBar(
               tabs: [
-                Text(tr('details')),
-                Text(tr('orders')),
+                Text(tr('order_details')),
+                Text(tr('instalments')),
               ],
             ),
           ),
           body: TabBarView(
             children: [
               userDetailsWidget(),
-              OrdersScreen(clientModel),
+              userDetailsWidget(),
+              // OrdersScreen(orderModel),
             ],
           ),
           floatingActionButton: FloatingActionButton(
@@ -49,21 +49,22 @@ class ClientsDetailsScreen extends StatelessWidget {
     return Column(
       children: [
         ListTile(
-          title: Text(tr('name')),
-          subtitle: Text(clientModel.name),
+          title: Text(tr('product_name')),
+          subtitle: Text(orderModel.product_name!),
         ),
         ListTile(
-          title: Text(tr('phone')),
-          subtitle: Text(clientModel.phone),
+          title: Text(tr('main_price')),
+          subtitle: Text(orderModel.main_price!.toString()),
         ),
         ListTile(
-          title: Text(tr('address')),
-          subtitle: Text(clientModel.address),
+          title: Text(tr('is_installment')),
+          subtitle: Text(orderModel.is_instalment! ? tr('yes') : tr('no')),
         ),
-        ListTile(
-          title: Text(tr('national_id')),
-          subtitle: Text(clientModel.id_num),
-        ),
+        if (orderModel.is_instalment!)
+          ListTile(
+            title: Text(tr('instalment_total_price')),
+            subtitle: Text(orderModel.instalment_total_price!.toString()),
+          ),
       ],
     );
   }

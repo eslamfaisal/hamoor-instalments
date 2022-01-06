@@ -3,13 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:instalment/locator.dart';
 import 'package:instalment/routs/routs_names.dart';
 import 'package:instalment/screens/base_view.dart';
-import 'package:instalment/screens/clients/model/clients_model.dart';
 import 'package:instalment/screens/clients/view/clients_screen.dart';
 import 'package:instalment/screens/home/viewmodel/home_view_model.dart';
 import 'package:instalment/services/navigation_service.dart';
 
 class HomeScreen extends StatelessWidget {
-
   HomeScreen({Key? key}) : super(key: key);
 
   @override

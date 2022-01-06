@@ -7,6 +7,9 @@ import 'package:instalment/screens/clients/view/clients_details_screen.dart';
 import 'package:instalment/screens/clients/view/edit_clients_screen.dart';
 import 'package:instalment/screens/home/view/home_screen.dart';
 import 'package:instalment/screens/not_found_screen/not_found_screen.dart';
+import 'package:instalment/screens/orders_screen/model/order_model.dart';
+import 'package:instalment/screens/orders_screen/view/order_details_screen.dart';
+import 'package:instalment/screens/orders_screen/view/orders_screen.dart';
 
 class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -34,6 +37,11 @@ class AppRouter {
       case RouteName.CLIENTS_DETAILS:
         var clientArgument = settings.arguments as ClientModel;
         return _getPageRoute(ClientsDetailsScreen(clientArgument), settings);
+
+      case RouteName.ORDERS_DETAILS:
+        var clientArgument = settings.arguments as OrderModel;
+        return _getPageRoute(OrderDetailsScreen(clientArgument), settings);
+
 
       default:
         return _getPageRoute(const NotFoundScreen(), settings);

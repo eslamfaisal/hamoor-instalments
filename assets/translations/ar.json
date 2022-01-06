@@ -8,5 +8,14 @@
   "name": "الاسم",
   "phone": "الهاتف",
   "address": "العنوان",
-  "national_id": "رقم البطاقه"
+  "national_id": "رقم البطاقه",
+  "order_details": "تفاصيل الطلب",
+  "clients_details": "تفاصيل العميل",
+  "instalments": "الاقساط",
+  "product_name": "اسم المنتج",
+  "main_price": "السعر الاساسي",
+  "is_installment": "شراء بالاقساط",
+  "instalment_total_price": "السعر الاجمالي",
+  "details": "التفاصيل",
+  "orders": "الطلبات"
 }
